@@ -1,0 +1,21 @@
+Package: RcppXsimd
+Type: Package
+Title: Xsimd C++ Header-only Library Files
+Version: 7.1.3
+Date: 2019-03-20
+Authors@R: c(
+    person("Marc A.", "Suchard", email = "msuchard@ucla.edu", role = c("aut","cre")),
+    person("Andrew J.", "Holbrook", role = "aut"),
+    person("Observational Health Data Sciences and Informatics", role = "cph"),
+    person("Johan", "Mabille", role = c("cph", "ctb"),
+      comment = "author and copyright holder of Xsimd library under a BSD-3 license"),
+    person("Sylvain", "Corlay", role = c("cph", "ctb"),
+      comment = "author and copyright holder of Xsimd library under a BSD-3 license")
+    )
+Description: This header-only library provides modern, portable C++ wrappers for SIMD
+    intrinsics and parallelized, optimized math implementations (SSE, AVX, NEON, AVX512).
+    By placing this library in this package, we offer an efficient distribution system
+    for R packages using CRAN.
+License: MIT + file LICENSE
+Imports: Rcpp (>= 1.0.0)
+LinkingTo: Rcpp
