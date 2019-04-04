@@ -1,4 +1,10 @@
-maintanence
+maintanence/xsimd*
+maintanence/*.tar.gz
 .Rproj.user
+.Rhistory
 *.o
 *.so
+src/Makevars
+autom4te.cache
+config.log
+config.status

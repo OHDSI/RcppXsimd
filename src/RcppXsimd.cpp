@@ -4,30 +4,18 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
-// [[Rcpp::export]]
-List rcpp_hello_world() {
-
-    CharacterVector x = CharacterVector::create( "foo", "bar" )  ;
-    NumericVector y   = NumericVector::create( 0.0, 1.0 ) ;
-    List z            = List::create( x, y ) ;
-
-    return z ;
-}
-
-// [[Rcpp::export]]
-List getProcessorSimdSupport() {
-  
-  xsimd::batch<double, 4> a(1.5, 2.5, 3.5, 4.5);
-  xsimd::batch<double, 4> b(2.5, 3.5, 4.5, 5.5);
-  auto mean = (a + b) / 2;
-  std::cout << mean << std::endl;
-  
-  return List::create();
-
-}
-
-
-// [[Rcpp::export]]
+//' Poll OS and CPU for SIMD feature support
+//' 
+//' Execute CPUID to poll operating system and central processing unit for 
+//' single instruction, multiple data feature support.
+//' 
+//' @return List of operating sytem (OS) and hardware (HW) feature support; 
+//' see CPUID Wiki page for flag definitions
+//' 
+//' @references \url{https://en.wikipedia.org/wiki/CPUID}
+//'
+//' @export
+// [[Rcpp::export]] 
 List getSimdFeatures() {
   FeatureDetector::cpu_x86 features;
   features.detect_host();
