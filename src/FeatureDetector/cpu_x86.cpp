@@ -1,9 +1,9 @@
 /* cpu_x86.cpp
- * 
+ *
  * Author           : Alexander J. Yee
  * Date Created     : 04/12/2014
  * Last Modified    : 04/12/2014
- * 
+ *
  */
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -19,7 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 #if defined(__x86_64__) || defined(_M_X64) || defined(__i386) || defined(_M_IX86)
-#   if _WIN32
+#   if defined(_WIN32) && defined(_MSC_VER)
 #       include "cpu_x86_Windows.ipp"
 #   elif defined(__GNUC__) || defined(__clang__)
 #       include "cpu_x86_Linux.ipp"
@@ -166,7 +166,7 @@ void cpu_x86::detect_host(){
 //     print("    AMD         = ", Vendor_AMD);
 //     print("    Intel       = ", Vendor_Intel);
 //     cout << endl;
-// 
+//
 //     cout << "OS Features:" << endl;
 // #ifdef _WIN32
 //     print("    64-bit      = ", OS_x64);
@@ -174,7 +174,7 @@ void cpu_x86::detect_host(){
 //     print("    OS AVX      = ", OS_AVX);
 //     print("    OS AVX512   = ", OS_AVX512);
 //     cout << endl;
-// 
+//
 //     cout << "Hardware Features:" << endl;
 //     print("    MMX         = ", HW_MMX);
 //     print("    x64         = ", HW_x64);
@@ -186,7 +186,7 @@ void cpu_x86::detect_host(){
 //     print("    MPX         = ", HW_MPX);
 //     print("    PREFETCHWT1 = ", HW_PREFETCHWT1);
 //     cout << endl;
-// 
+//
 //     cout << "SIMD: 128-bit" << endl;
 //     print("    SSE         = ", HW_SSE);
 //     print("    SSE2        = ", HW_SSE2);
@@ -198,7 +198,7 @@ void cpu_x86::detect_host(){
 //     print("    AES-NI      = ", HW_AES);
 //     print("    SHA         = ", HW_SHA);
 //     cout << endl;
-// 
+//
 //     cout << "SIMD: 256-bit" << endl;
 //     print("    AVX         = ", HW_AVX);
 //     print("    XOP         = ", HW_XOP);
@@ -206,7 +206,7 @@ void cpu_x86::detect_host(){
 //     print("    FMA4        = ", HW_FMA4);
 //     print("    AVX2        = ", HW_AVX2);
 //     cout << endl;
-// 
+//
 //     cout << "SIMD: 512-bit" << endl;
 //     print("    AVX512-F    = ", HW_AVX512_F);
 //     print("    AVX512-CD   = ", HW_AVX512_CD);
@@ -218,7 +218,7 @@ void cpu_x86::detect_host(){
 //     print("    AVX512-IFMA = ", HW_AVX512_IFMA);
 //     print("    AVX512-VBMI = ", HW_AVX512_VBMI);
 //     cout << endl;
-// 
+//
 //     cout << "Summary:" << endl;
 //     print("    Safe to use AVX:     ", HW_AVX && OS_AVX);
 //     print("    Safe to use AVX512:  ", HW_AVX512_F && OS_AVX512);
