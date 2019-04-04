@@ -1,0 +1,8 @@
+CXX_STD = CXX14
+
+PKG_CPPFLAGS = -I../inst/include -mfma -msse4.2 -mavx
+
+OBJECTS = \
+	RcppXsimd.o \
+	RcppExports.o \
+	FeatureDetector/cpu_x86.o
