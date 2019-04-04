@@ -15,9 +15,31 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// getProcessorSimdSupport
+List getProcessorSimdSupport();
+RcppExport SEXP _RcppXsimd_getProcessorSimdSupport() {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    rcpp_result_gen = Rcpp::wrap(getProcessorSimdSupport());
+    return rcpp_result_gen;
+END_RCPP
+}
+// getSimdFeatures
+List getSimdFeatures();
+RcppExport SEXP _RcppXsimd_getSimdFeatures() {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    rcpp_result_gen = Rcpp::wrap(getSimdFeatures());
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_RcppXsimd_rcpp_hello_world", (DL_FUNC) &_RcppXsimd_rcpp_hello_world, 0},
+    {"_RcppXsimd_getProcessorSimdSupport", (DL_FUNC) &_RcppXsimd_getProcessorSimdSupport, 0},
+    {"_RcppXsimd_getSimdFeatures", (DL_FUNC) &_RcppXsimd_getSimdFeatures, 0},
     {NULL, NULL, 0}
 };
 

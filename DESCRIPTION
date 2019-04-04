@@ -10,7 +10,9 @@ Authors@R: c(
     person("Johan", "Mabille", role = c("cph", "ctb"),
       comment = "author and copyright holder of Xsimd library under a BSD-3 license"),
     person("Sylvain", "Corlay", role = c("cph", "ctb"),
-      comment = "author and copyright holder of Xsimd library under a BSD-3 license")
+      comment = "author and copyright holder of Xsimd library under a BSD-3 license"),
+    person("Alexander J.", "Lee", role = c("cph", "ctb"),
+      comment = "author and copyright holder of FeatureDetector library under a CC0 1.0 license")
     )
 Description: This header-only library provides modern, portable C++ wrappers for SIMD
     intrinsics and parallelized, optimized math implementations (SSE, AVX, NEON, AVX512).

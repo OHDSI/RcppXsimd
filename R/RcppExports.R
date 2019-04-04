@@ -5,3 +5,11 @@ rcpp_hello_world <- function() {
     .Call(`_RcppXsimd_rcpp_hello_world`)
 }
 
+getProcessorSimdSupport <- function() {
+    .Call(`_RcppXsimd_getProcessorSimdSupport`)
+}
+
+getSimdFeatures <- function() {
+    .Call(`_RcppXsimd_getSimdFeatures`)
+}
+
