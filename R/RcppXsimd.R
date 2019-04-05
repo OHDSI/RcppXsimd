@@ -93,7 +93,7 @@ supportsAVX512 <- function() {
   features$HW_AVX512_F && features$HW_AVX512_BW
 }
 
-#' Concatenation supported SSE compiler flags for system CPU
+#' Concatenate supported SSE compiler flags for system CPU
 #' 
 #' @return String for compiler flags
 #' 
@@ -103,7 +103,7 @@ getSSEFlags <- function() {
   .makeFlags(getSimdFeatures(), sseCodesWithFlags)
 }
 
-#' Concatenation supported AVX compiler flags for system CPU
+#' Concatenate supported AVX compiler flags for system CPU
 #' 
 #' @return String for compiler flags
 #' 
@@ -113,7 +113,7 @@ getAVXFlags <- function() {
   paste(getSSEFlags(), .makeFlags(getSimdFeatures(), avxCodesWithFlags), collapse = " ")
 }
 
-#' Concatenation supported AVX512 compiler flags for system CPU
+#' Concatenate supported AVX512 compiler flags for system CPU
 #' 
 #' @return String for compiler flags
 #' 

@@ -2,7 +2,7 @@
 % Please edit documentation in R/RcppXsimd.R
 \name{getAVXFlags}
 \alias{getAVXFlags}
-\title{Concatenation supported AVX compiler flags for system CPU}
+\title{Concatenate supported AVX compiler flags for system CPU}
 \usage{
 getAVXFlags()
 }
@@ -10,5 +10,5 @@ getAVXFlags()
 String for compiler flags
 }
 \description{
-Concatenation supported AVX compiler flags for system CPU
+Concatenate supported AVX compiler flags for system CPU
 }

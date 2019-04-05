@@ -2,7 +2,7 @@
 % Please edit documentation in R/RcppXsimd.R
 \name{getAVX512Flags}
 \alias{getAVX512Flags}
-\title{Concatenation supported AVX512 compiler flags for system CPU}
+\title{Concatenate supported AVX512 compiler flags for system CPU}
 \usage{
 getAVX512Flags()
 }
@@ -10,5 +10,5 @@ getAVX512Flags()
 String for compiler flags
 }
 \description{
-Concatenation supported AVX512 compiler flags for system CPU
+Concatenate supported AVX512 compiler flags for system CPU
 }

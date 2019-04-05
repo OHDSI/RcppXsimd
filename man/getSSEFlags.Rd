@@ -2,7 +2,7 @@
 % Please edit documentation in R/RcppXsimd.R
 \name{getSSEFlags}
 \alias{getSSEFlags}
-\title{Concatenation supported SSE compiler flags for system CPU}
+\title{Concatenate supported SSE compiler flags for system CPU}
 \usage{
 getSSEFlags()
 }
@@ -10,5 +10,5 @@ getSSEFlags()
 String for compiler flags
 }
 \description{
-Concatenation supported SSE compiler flags for system CPU
+Concatenate supported SSE compiler flags for system CPU
 }
