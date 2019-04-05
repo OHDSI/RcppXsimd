@@ -14,7 +14,7 @@ Determine if CPU supports AVX512 SIMD instructions
 }
 \examples{
 if (supportsAVX512()) {
-  Sys.setenv(PKG_CPPFLAGS = "-mavx512f")
+  Sys.setenv(PKG_CPPFLAGS = "-mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq")
   Rcpp::sourceCpp(verbose = TRUE, code='
     // [[Rcpp::plugins(cpp14)]]
     // [[Rcpp::depends(RcppXsimd)]]
