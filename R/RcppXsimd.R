@@ -1,3 +1,10 @@
+#' RcppXsimd: Rcpp wrapper to Xsimd
+#' 
+#' The RcppXsimd package wrappers the header-only C++ Xsimd library that 
+#' provides parallelized math implementations using SIMD
+#' 
+#' @docType package
+#' @name RcppXsimd
 #' @useDynLib RcppXsimd, .registration = TRUE
 #' @importFrom Rcpp sourceCpp
 NULL
