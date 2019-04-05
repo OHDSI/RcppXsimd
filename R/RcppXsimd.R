@@ -10,7 +10,7 @@ NULL
 #' if (supportsSSE42()) {
 #'   Sys.setenv(PKG_CPPFLAGS = "-msse4.2")
 #'   Rcpp::sourceCpp(code='
-#'     // [[Rcpp::plugins(cpp11)]]
+#'     // [[Rcpp::plugins(cpp14)]]
 #'     // [[Rcpp::depends(RcppXsimd)]]
 #'                
 #'     #include <Rcpp.h>
@@ -40,7 +40,7 @@ supportsSSE42 <- function() {
 #' if (supportsAVX()) {
 #'   Sys.setenv(PKG_CPPFLAGS = "-mavx")
 #'   Rcpp::sourceCpp(code='
-#'     // [[Rcpp::plugins(cpp11)]]
+#'     // [[Rcpp::plugins(cpp14)]]
 #'     // [[Rcpp::depends(RcppXsimd)]]
 #'                
 #'     #include <Rcpp.h>
@@ -70,7 +70,7 @@ supportsAVX <- function() {
 #' if (supportsAVX512()) {
 #'   Sys.setenv(PKG_CPPFLAGS = "-mavx512f")
 #'   Rcpp::sourceCpp(code='
-#'     // [[Rcpp::plugins(cpp11)]]
+#'     // [[Rcpp::plugins(cpp14)]]
 #'     // [[Rcpp::depends(RcppXsimd)]]
 #'                
 #'     #include <Rcpp.h>
