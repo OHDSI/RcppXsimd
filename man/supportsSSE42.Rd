@@ -14,7 +14,7 @@ Determine if CPU supports SSE4.2 SIMD instructions
 }
 \examples{
 if (supportsSSE42()) {
-  Sys.setenv(PKG_CPPFLAGS = "-msse4.2")
+  Sys.setenv(PKG_CPPFLAGS = getSSEFlags())
   Rcpp::sourceCpp(verbose = TRUE, code='
     // [[Rcpp::plugins(cpp14)]]
     // [[Rcpp::depends(RcppXsimd)]]

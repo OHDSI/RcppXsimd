@@ -8,7 +8,7 @@ NULL
 #' 
 #' @examples 
 #' if (supportsSSE42()) {
-#'   Sys.setenv(PKG_CPPFLAGS = "-msse4.2")
+#'   Sys.setenv(PKG_CPPFLAGS = getSSEFlags())
 #'   Rcpp::sourceCpp(verbose = TRUE, code='
 #'     // [[Rcpp::plugins(cpp14)]]
 #'     // [[Rcpp::depends(RcppXsimd)]]
@@ -38,7 +38,7 @@ supportsSSE42 <- function() {
 #' 
 #' @examples 
 #' if (supportsAVX()) {
-#'   Sys.setenv(PKG_CPPFLAGS = "-mavx")
+#'   Sys.setenv(PKG_CPPFLAGS = getAVXFlags())
 #'   Rcpp::sourceCpp(verbose = TRUE, code='
 #'     // [[Rcpp::plugins(cpp14)]]
 #'     // [[Rcpp::depends(RcppXsimd)]]
@@ -68,7 +68,7 @@ supportsAVX <- function() {
 #' 
 #' @examples 
 #' if (supportsAVX512()) {
-#'   Sys.setenv(PKG_CPPFLAGS = "-mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq")
+#'   Sys.setenv(PKG_CPPFLAGS = getAVX512Flags())
 #'   Rcpp::sourceCpp(verbose = TRUE, code='
 #'     // [[Rcpp::plugins(cpp14)]]
 #'     // [[Rcpp::depends(RcppXsimd)]]
@@ -89,7 +89,44 @@ supportsAVX <- function() {
 #' 
 #' @export
 supportsAVX512 <- function() {
-  getSimdFeatures()$HW_AVX512_F
+  features <- getSimdFeatures()
+  features$HW_AVX512_F && features$HW_AVX512_BW
+}
+
+#' Concatenation supported SSE compiler flags for system CPU
+#' 
+#' @return String for compiler flags
+#' 
+#' @export
+getSSEFlags <- function() {
+  sseCodesWithFlags <- c("HW_SSE", "HW_SSE2", "HW_SSE3", "HW_SSSE3", "HW_SSE4.1", "HW_SSE4.2")
+  .makeFlags(getSimdFeatures(), sseCodesWithFlags)
+}
+
+#' Concatenation supported AVX compiler flags for system CPU
+#' 
+#' @return String for compiler flags
+#' 
+#' @export
+getAVXFlags <- function() {
+  avxCodesWithFlags <- c("HW_AVX", "HW_AVX2")
+  paste(getSSEFlags(), .makeFlags(getSimdFeatures(), avxCodesWithFlags), collapse = " ")
+}
+
+#' Concatenation supported AVX512 compiler flags for system CPU
+#' 
+#' @return String for compiler flags
+#' 
+#' @export
+getAVX512Flags <- function() {
+  avx512CodesWithFlags <- c( "HW_AVX512_F", "HW_AVX512_PF", "HW_AVX512_ER", "HW_AVX512_CD", "HW_AVX512_VL", "HW_AVX512_BW", "HW_AVX512_DQ")
+  paste(getAVXFlags(), .makeFlags(getSimdFeatures(), avx512CodesWithFlags), collapse = " ")
+}
+
+.makeFlags <- function(features, codes) {
+  flags <- unlist(features[codes])
+  flags <- names(flags[which(flags)])
+  paste(sub("_", "", tolower(sub("HW_", "-m", flags))), collapse = " ")    
 }
 
 # printPreprocessorOptions <- function() {

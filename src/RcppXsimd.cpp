@@ -43,8 +43,8 @@ List getSimdFeatures() {
     Named("HW_SSE2") = features.HW_SSE2,
     Named("HW_SSE3") = features.HW_SSE3,
     Named("HW_SSSE3") = features.HW_SSSE3,
-    Named("HW_SSE41") = features.HW_SSE41,
-    Named("HW_SSE42") = features.HW_SSE42,
+    Named("HW_SSE4.1") = features.HW_SSE41,
+    Named("HW_SSE4.2") = features.HW_SSE42,
     Named("HW_SSE4a") = features.HW_SSE4a,
     Named("HW_AES") = features.HW_AES,
     Named("HW_SHA") = features.HW_SHA
