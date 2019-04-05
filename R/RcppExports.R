@@ -16,3 +16,8 @@ getSimdFeatures <- function() {
     .Call(`_RcppXsimd_getSimdFeatures`)
 }
 
+#' @export
+test <- function() {
+    invisible(.Call(`_RcppXsimd_test`))
+}
+

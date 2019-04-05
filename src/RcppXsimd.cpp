@@ -77,3 +77,13 @@ List getSimdFeatures() {
   Function unlist("unlist");
   return unlist(mergedList, _["recursive"] = false);
 }
+
+//' @export
+// [[Rcpp::export]] 
+void test() {
+  xsimd::batch<double, 2> a(1.0);
+  xsimd::batch<double, 2> b(1.0);
+  Rcout << a << " + " << b << " = " << (a + b) << std::endl;
+}
+
+

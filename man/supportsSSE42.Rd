@@ -2,7 +2,7 @@
 % Please edit documentation in R/RcppXsimd.R
 \name{supportsSSE42}
 \alias{supportsSSE42}
-\title{Determine if CPU supports SSE42 SIMD instructions}
+\title{Determine if CPU supports SSE4.2 SIMD instructions}
 \usage{
 supportsSSE42()
 }
@@ -10,5 +10,27 @@ supportsSSE42()
 Boolean
 }
 \description{
-Determine if CPU supports SSE42 SIMD instructions
+Determine if CPU supports SSE4.2 SIMD instructions
+}
+\examples{
+if (supportsSSE42()) {
+  Sys.setenv(PKG_CPPFLAGS = "-msse4.2")
+  Rcpp::sourceCpp(code='
+    // [[Rcpp::plugins(cpp11)]]
+    // [[Rcpp::depends(RcppXsimd)]]
+               
+    #include <Rcpp.h>
+    #include "xsimd/xsimd.hpp"
+               
+    // [[Rcpp::export]] 
+    void demoSSE42() {
+      xsimd::batch<double, 2> a(1.0);
+      xsimd::batch<double, 2> b(1.0);
+      Rcpp::Rcout << a << " + " << b << " = " << (a + b) << std::endl;
+    }')
+  demoSSE42()
+} else {
+  message("SSE4.2 is not supported")
+}
+
 }

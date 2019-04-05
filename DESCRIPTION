@@ -1,6 +1,6 @@
 Package: RcppXsimd
 Type: Package
-Title: Xsimd C++ Header-only Library Files
+Title: Xsimd C++ Header-Only Library Files
 Version: 7.1.3
 Date: 2019-03-20
 Authors@R: c(

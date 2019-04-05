@@ -4,7 +4,6 @@ maintanence/*.tar.gz
 .Rhistory
 *.o
 *.so
-src/Makevars
 autom4te.cache
 config.log
 config.status

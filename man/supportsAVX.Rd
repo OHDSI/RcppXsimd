@@ -12,3 +12,25 @@ Boolean
 \description{
 Determine if CPU supports AVX SIMD instructions
 }
+\examples{
+if (supportsAVX()) {
+  Sys.setenv(PKG_CPPFLAGS = "-mavx")
+  Rcpp::sourceCpp(code='
+    // [[Rcpp::plugins(cpp11)]]
+    // [[Rcpp::depends(RcppXsimd)]]
+               
+    #include <Rcpp.h>
+    #include "xsimd/xsimd.hpp"
+               
+    // [[Rcpp::export]] 
+    void demoAVX() {
+      xsimd::batch<double, 4> a(1.0);
+      xsimd::batch<double, 4> b(1.0);
+      Rcpp::Rcout << a << " + " << b << " = " << (a + b) << std::endl;
+    }')
+  demoAVX()
+} else {
+  message("AVX is not supported")
+}
+
+}

@@ -15,9 +15,19 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// test
+void test();
+RcppExport SEXP _RcppXsimd_test() {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    test();
+    return R_NilValue;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_RcppXsimd_getSimdFeatures", (DL_FUNC) &_RcppXsimd_getSimdFeatures, 0},
+    {"_RcppXsimd_test", (DL_FUNC) &_RcppXsimd_test, 0},
     {NULL, NULL, 0}
 };
 

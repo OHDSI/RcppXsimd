@@ -12,3 +12,25 @@ Boolean
 \description{
 Determine if CPU supports AVX512 SIMD instructions
 }
+\examples{
+if (supportsAVX512()) {
+  Sys.setenv(PKG_CPPFLAGS = "-mavx512f")
+  Rcpp::sourceCpp(code='
+    // [[Rcpp::plugins(cpp11)]]
+    // [[Rcpp::depends(RcppXsimd)]]
+               
+    #include <Rcpp.h>
+    #include "xsimd/xsimd.hpp"
+               
+    // [[Rcpp::export]] 
+    void demoAVX512() {
+      xsimd::batch<double, 8> a(1.0);
+      xsimd::batch<double, 8> b(1.0);
+      Rcpp::Rcout << a << " + " << b << " = " << (a + b) << std::endl;
+    }')
+  demoAVX512()
+} else {
+  message("AVX512 is not supported")
+}
+
+}
