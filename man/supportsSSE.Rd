@@ -13,6 +13,8 @@ Boolean
 Determine if CPU supports SSE SIMD instructions
 }
 \examples{
+\dontrun{
+
 if (supportsSSE()) {
   Sys.setenv(PKG_CPPFLAGS = getSSEFlags())
   Rcpp::sourceCpp(verbose = TRUE, code='
@@ -31,6 +33,7 @@ if (supportsSSE()) {
   demoSSE42()
 } else {
   message("SSE4.2 is not supported")
+}
 }
 
 }

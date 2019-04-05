@@ -13,6 +13,8 @@ Boolean
 Determine if CPU supports AVX512 SIMD instructions
 }
 \examples{
+\dontrun{
+
 if (supportsAVX512()) {
   Sys.setenv(PKG_CPPFLAGS = getAVX512Flags())
   Rcpp::sourceCpp(verbose = TRUE, code='
@@ -32,5 +34,5 @@ if (supportsAVX512()) {
 } else {
   message("AVX512 is not supported")
 }
-
+}
 }

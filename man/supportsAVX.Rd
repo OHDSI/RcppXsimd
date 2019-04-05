@@ -13,6 +13,8 @@ Boolean
 Determine if CPU supports AVX SIMD instructions
 }
 \examples{
+\dontrun{
+
 if (supportsAVX()) {
   Sys.setenv(PKG_CPPFLAGS = getAVXFlags())
   Rcpp::sourceCpp(verbose = TRUE, code='
@@ -31,6 +33,7 @@ if (supportsAVX()) {
   demoAVX()
 } else {
   message("AVX is not supported")
+}
 }
 
 }

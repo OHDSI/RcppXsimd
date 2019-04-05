@@ -14,6 +14,8 @@ NULL
 #' @return Boolean
 #' 
 #' @examples 
+#' \dontrun{
+#' 
 #' if (supportsSSE()) {
 #'   Sys.setenv(PKG_CPPFLAGS = getSSEFlags())
 #'   Rcpp::sourceCpp(verbose = TRUE, code='
@@ -33,6 +35,7 @@ NULL
 #' } else {
 #'   message("SSE4.2 is not supported")
 #' }
+#' }
 #' 
 #' @export
 supportsSSE <- function() {
@@ -44,6 +47,8 @@ supportsSSE <- function() {
 #' @return Boolean
 #' 
 #' @examples 
+#' \dontrun{
+#' 
 #' if (supportsAVX()) {
 #'   Sys.setenv(PKG_CPPFLAGS = getAVXFlags())
 #'   Rcpp::sourceCpp(verbose = TRUE, code='
@@ -63,6 +68,7 @@ supportsSSE <- function() {
 #' } else {
 #'   message("AVX is not supported")
 #' }
+#' }
 #' 
 #' @export
 supportsAVX <- function() {
@@ -75,6 +81,8 @@ supportsAVX <- function() {
 #' @return Boolean
 #' 
 #' @examples 
+#' \dontrun{
+#' 
 #' if (supportsAVX512()) {
 #'   Sys.setenv(PKG_CPPFLAGS = getAVX512Flags())
 #'   Rcpp::sourceCpp(verbose = TRUE, code='
@@ -94,7 +102,7 @@ supportsAVX <- function() {
 #' } else {
 #'   message("AVX512 is not supported")
 #' }
-#' 
+#' }
 #' @export
 supportsAVX512 <- function() {
   features <- getSimdFeatures()
