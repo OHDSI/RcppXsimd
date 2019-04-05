@@ -2,10 +2,10 @@ language: r
 
 cache: packages
 
-#r:
-#  - oldrel
-#  - release
-#  - devel
+r:
+ - oldrel
+ - release
+ - devel
 
 addons:
   apt:
@@ -17,12 +17,3 @@ addons:
 before_install:
   - mkdir -p ~/.R
   - echo "CXX14 = g++-7 -fPIC" >> ~/.R/Makevars
-#  - VER=-5
-#  - echo "CC=gcc$(VER) -std=gnu99" >> ~/.R/Makevars
-#  - echo "CXX=g++$(VER)"           >> ~/.R/Makevars
-#  - echo 'CXX1X=$(CXX)'            >> ~/.R/Makevars
-#  - echo 'CXX11=$(CXX)'            >> ~/.R/Makevars
-#  - echo 'CXX14=$(CXX)'            >> ~/.R/Makevars
-#  - echo "SHLIB_CXXLD=g++$(VER)"   >> ~/.R/Makevars
-#  - echo "FC=gfortran$(VER)"       >> ~/.R/Makevars
-#  - echo "F77=gfortran$(VER)"      >> ~/.R/Makevars
