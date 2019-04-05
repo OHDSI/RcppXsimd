@@ -15,7 +15,7 @@ Determine if CPU supports AVX SIMD instructions
 \examples{
 if (supportsAVX()) {
   Sys.setenv(PKG_CPPFLAGS = "-mavx")
-  Rcpp::sourceCpp(code='
+  Rcpp::sourceCpp(verbose = TRUE, code='
     // [[Rcpp::plugins(cpp14)]]
     // [[Rcpp::depends(RcppXsimd)]]
                
