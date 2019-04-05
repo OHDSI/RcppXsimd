@@ -2,12 +2,12 @@
 #' @importFrom Rcpp sourceCpp
 NULL
 
-#' Determine if CPU supports SSE4.2 SIMD instructions
+#' Determine if CPU supports SSE SIMD instructions
 #' 
 #' @return Boolean
 #' 
 #' @examples 
-#' if (supportsSSE42()) {
+#' if (supportsSSE()) {
 #'   Sys.setenv(PKG_CPPFLAGS = getSSEFlags())
 #'   Rcpp::sourceCpp(verbose = TRUE, code='
 #'     // [[Rcpp::plugins(cpp14)]]
@@ -28,8 +28,8 @@ NULL
 #' }
 #' 
 #' @export
-supportsSSE42 <- function() {
-  getSimdFeatures()$HW_SSE42
+supportsSSE <- function() {
+  getSimdFeatures()$HW_SSE
 }
 
 #' Determine if CPU supports AVX SIMD instructions
