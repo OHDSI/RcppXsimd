@@ -3,3 +3,4 @@
 maintanence
 extras
 \.o$
+.travis.yml
