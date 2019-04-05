@@ -66,7 +66,8 @@ supportsSSE <- function() {
 #' 
 #' @export
 supportsAVX <- function() {
-  getSimdFeatures()$HW_AVX
+  features <- getSimdFeatures()
+  features$HW_AVX && features$OS_AVX
 }
 
 #' Determine if CPU supports AVX512 SIMD instructions
