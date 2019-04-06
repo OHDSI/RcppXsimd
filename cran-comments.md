@@ -1,4 +1,8 @@
-## New package submission
+## Resubmission following email from Uwe Ligges asking to "only ship the CAN template
+for the MIT license. Please fix and resubmit."
+* LICENSE file now only includes 2 lines (year and copyright-holder)
+
+## New package information
 This package imports the header-only `Xsimd` library that provides C++ SIMD
 implementations of mathematical operations.  While there is very little executable
 R code directly in this package, it is an important dependency of several high-performance
@@ -10,7 +14,10 @@ statistical packages that I am developing and plan to release via CRAN.
 * win-builder (devel, release, oldrel)
 
 ## R CMD check results
-* There were no ERRORs, WARNINGs or NOTEs
+* There were no ERRORs and WARNINGs.
+* There are 2 NOTEs:
+  - New submission
+  - Possible misspellings in DESCRIPTION (of which, I believe, there are none)
 
 ## Downstream dependencies
 There are currently no downstream dependencies.
