@@ -16,4 +16,5 @@ addons:
 
 before_install:
   - mkdir -p ~/.R
+  - echo "CXX11 = g++-7 -fPIC" >> ~/.R/Makevars
   - echo "CXX14 = g++-7 -fPIC" >> ~/.R/Makevars

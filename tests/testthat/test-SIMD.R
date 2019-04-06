@@ -6,7 +6,7 @@ test_that("SSE", {
   if (supportsSSE()) {
     Sys.setenv(PKG_CPPFLAGS = getSSEFlags())
     Rcpp::sourceCpp(verbose = TRUE, code='
-      // [[Rcpp::plugins(cpp14)]]
+      // [[Rcpp::plugins(cpp11)]]
       // [[Rcpp::depends(RcppXsimd)]]
                     
       #include <Rcpp.h>
@@ -29,7 +29,7 @@ test_that("AVX", {
   if (supportsAVX()) {
     Sys.setenv(PKG_CPPFLAGS = getAVXFlags())
     Rcpp::sourceCpp(verbose = TRUE, code='
-    // [[Rcpp::plugins(cpp14)]]
+    // [[Rcpp::plugins(cpp11)]]
     // [[Rcpp::depends(RcppXsimd)]]
                     
     #include <Rcpp.h>
@@ -51,7 +51,7 @@ test_that("AVX512", {
   if (supportsAVX512()) {
     Sys.setenv(PKG_CPPFLAGS = getAVX512Flags())
     Rcpp::sourceCpp(verbose = TRUE, code='
-    // [[Rcpp::plugins(cpp14)]]
+    // [[Rcpp::plugins(cpp11)]]
     // [[Rcpp::depends(RcppXsimd)]]
                     
     #include <Rcpp.h>
