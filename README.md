@@ -41,6 +41,8 @@ Development status
 
 [![Build Status](https://travis-ci.org/OHDSI/RcppXsimd.svg?branch=master)](https://travis-ci.org/OHDSI/RcppXsimd)
 
+[![Build status](https://ci.appveyor.com/api/projects/status/h6ucnf08yk08fbkk?svg=true)](https://ci.appveyor.com/project/andrewjholbrook/rcppxsimd)
+
 Acknowledgements
 ================
 - This project is supported in part through the National Science Foundation grant DMS 1264153.
