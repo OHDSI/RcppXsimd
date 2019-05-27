@@ -15,7 +15,7 @@ cache:
   
 # scripts to run before build
 before_build:
-  - Rscript.exe -e 'dotR <- file.path(Sys.getenv("HOME"), ".R")
+  - Rscript -e 'dotR <- file.path(Sys.getenv("HOME"), ".R")
     if (!file.exists(dotR)) dir.create(dotR)
     M <- file.path(dotR, "Makevars.win")
     if (!file.exists(M)) file.create(M)
