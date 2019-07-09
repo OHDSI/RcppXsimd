@@ -9,10 +9,7 @@
 * solaris 10, R-patched (experimental)
 
 ## R CMD check results
-* There were no ERRORs and WARNINGs.
-* There are 2 NOTEs:
-  - New submission
-  - Possible misspellings in DESCRIPTION (of which, I believe, there are none)
+* There were no ERRORs, WARNINGs or NOTEs.
 
 ## Downstream dependencies
 There are currently no downstream dependencies.
