@@ -104,6 +104,7 @@ namespace xsimd
 
         batch() = default;
 
+#if !defined(__sun) // On Solaris, char == int8_t
         explicit batch(const char* src)
             : batch(reinterpret_cast<const int8_t*>(src))
         {
@@ -118,6 +119,7 @@ namespace xsimd
             : batch(reinterpret_cast<const int8_t*>(src), unaligned_mode{})
         {
         }
+#endif // __sun
 
         XSIMD_DECLARE_LOAD_STORE_INT8(int8_t, 16)
         XSIMD_DECLARE_LOAD_STORE_LONG(int8_t, 16)
