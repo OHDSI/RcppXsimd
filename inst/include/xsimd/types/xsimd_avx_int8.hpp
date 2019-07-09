@@ -102,6 +102,7 @@ namespace xsimd
 
         batch() = default;
 
+#if !defined(__sun) // On Solaris, char == int8_t
         explicit batch(const char* src)
             : batch(reinterpret_cast<const int8_t*>(src))
         {
@@ -116,6 +117,7 @@ namespace xsimd
             : batch(reinterpret_cast<const int8_t*>(src), unaligned_mode{})
         {
         }
+#endif // __sun
 
         XSIMD_DECLARE_LOAD_STORE_INT8(int8_t, 32)
         XSIMD_DECLARE_LOAD_STORE_LONG(int8_t, 32)
@@ -125,7 +127,7 @@ namespace xsimd
     class batch<uint8_t, 32> : public avx_int_batch<uint8_t, 32>
     {
     public:
-        
+
         using base_class = avx_int_batch<uint8_t, 32>;
         using base_class::base_class;
         using base_class::load_aligned;
@@ -234,7 +236,7 @@ namespace xsimd
                     auto c = _mm256_unpacklo_epi8(a, b);    // 028A .... .... .... 46CE ...
                     auto d = _mm256_unpackhi_epi8(a, b);    // 139B .... .... .... 57DF ...
                     auto e = _mm256_unpacklo_epi8(c, d);    // 0123 89AB .... .... 4567 CDEF ...
-                    return _mm_unpacklo_epi32(_mm256_extractf128_si256(e, 0), 
+                    return _mm_unpacklo_epi32(_mm256_extractf128_si256(e, 0),
                                               _mm256_extractf128_si256(e, 1));  // 0123 4567 89AB CDEF
 
                 };
