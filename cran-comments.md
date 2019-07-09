@@ -1,16 +1,12 @@
-## Resubmission following email from Martina Schmirl on May 22 stating: "The Date field is over a
-* Done. See DESCRIPTION.
-
-## New package information
-This package imports the header-only `Xsimd` library that provides C++ SIMD
-implementations of mathematical operations.  While there is very little executable
-R code directly in this package, it is an important dependency of several high-performance
-statistical packages that I am developing and plan to release via CRAN.
+## Package patch following email from Brian Ripley noting compiler error on Solaris
+* Fixed.  Solaris C++ compiler defines type `char` == `int8_t` which led to recursively called constructors.  Such constructors are now #ifdef'd out for Solaris compilation
+* Checked on: Oracle Solaris 10, x86, 32 bit, R-patched (experimental)
 
 ## Test environments
 * local OS X install, R 3.5.1
 * ubuntu 14.04 (on travis-ci), R 3.5.1, gcc 7.0
 * win-builder (devel, release, oldrel)
+* solaris 10, R-patched (experimental)
 
 ## R CMD check results
 * There were no ERRORs and WARNINGs.
