@@ -1,4 +1,4 @@
-# RcppXsimd 7.1.3-1
+# RcppXsimd 7.1.4
 
 Patch for compilation error on Solaris
 
