@@ -39,7 +39,8 @@ NULL
 #' 
 #' @export
 supportsSSE <- function() {
-  getSimdFeatures()$HW_SSE
+  features <- getSimdFeatures()
+  !is.null(features$HW_SSE) && features$HW_SSE
 }
 
 #' Determine if CPU supports AVX SIMD instructions
@@ -73,7 +74,7 @@ supportsSSE <- function() {
 #' @export
 supportsAVX <- function() {
   features <- getSimdFeatures()
-  features$HW_AVX && features$OS_AVX
+  !is.null(features$HW_AVX) && features$OS_AVX
 }
 
 #' Determine if CPU supports AVX512 SIMD instructions
@@ -106,7 +107,7 @@ supportsAVX <- function() {
 #' @export
 supportsAVX512 <- function() {
   features <- getSimdFeatures()
-  features$HW_AVX512_F && features$HW_AVX512_BW
+  !is.null(features$HW_AVX512_F) && features$HW_AVX512_BW
 }
 
 #' Concatenate supported SSE compiler flags for system CPU

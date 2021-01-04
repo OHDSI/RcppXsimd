@@ -1,6 +1,10 @@
 #include "xsimd/xsimd.hpp"
+#ifdef __ARM_ARCH
+  // Currently do nothing
+#else
 #include "FeatureDetector/cpu_x86.h"
-
+#endif 
+  
 #include <Rcpp.h>
 using namespace Rcpp;
 
@@ -17,6 +21,15 @@ using namespace Rcpp;
 //' @export
 // [[Rcpp::export]] 
 List getSimdFeatures() {
+#ifdef __ARM_ARCH
+  // FeatureDetector::aarch64 features;
+  // features.detect_host();
+#ifdef __ARM_NEON
+  return List::create(Named("HW_NEON") = true);
+#else
+  return List::create();
+#endif // __ARM_NEON
+#else
   FeatureDetector::cpu_x86 features;
   features.detect_host();
   
@@ -76,4 +89,5 @@ List getSimdFeatures() {
   
   Function unlist("unlist");
   return unlist(mergedList, _["recursive"] = false);
+#endif
 }
