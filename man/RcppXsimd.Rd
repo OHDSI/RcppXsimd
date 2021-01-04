@@ -3,7 +3,6 @@
 \docType{package}
 \name{RcppXsimd}
 \alias{RcppXsimd}
-\alias{RcppXsimd-package}
 \title{RcppXsimd: Rcpp wrapper to Xsimd}
 \description{
 The RcppXsimd package wrappers the header-only C++ Xsimd library that 

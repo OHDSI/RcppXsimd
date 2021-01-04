@@ -1,6 +1,6 @@
 # RcppXsimd 7.1.5
 
-Patch for compilation on Apple M1
+Add support for NEON on Apple M1
 
 # RcppXsimd 7.1.4
 

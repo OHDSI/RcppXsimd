@@ -2,10 +2,12 @@
 
 export(getAVX512Flags)
 export(getAVXFlags)
+export(getNEONFlags)
 export(getSSEFlags)
 export(getSimdFeatures)
 export(supportsAVX)
 export(supportsAVX512)
+export(supportsNEON)
 export(supportsSSE)
 importFrom(Rcpp,sourceCpp)
 useDynLib(RcppXsimd, .registration = TRUE)

@@ -43,6 +43,40 @@ supportsSSE <- function() {
   !is.null(features$HW_SSE) && features$HW_SSE
 }
 
+#' Determine if CPU supports NEON SIMD instructions
+#' 
+#' @return Boolean
+#' 
+#' @examples 
+#' \dontrun{
+#' 
+#' if (supportsNEON()) {
+#'   Sys.setenv(PKG_CPPFLAGS = getNEONFlags())
+#'   Rcpp::sourceCpp(verbose = TRUE, code='
+#'     // [[Rcpp::plugins(cpp14)]]
+#'     // [[Rcpp::depends(RcppXsimd)]]
+#'                
+#'     #include <Rcpp.h>
+#'     #include "xsimd/xsimd.hpp"
+#'                
+#'     // [[Rcpp::export]] 
+#'     void demoNEON() {
+#'       xsimd::batch<double, 2> a(1.0);
+#'       xsimd::batch<double, 2> b(1.0);
+#'       Rcpp::Rcout << a << " + " << b << " = " << (a + b) << std::endl;
+#'     }')
+#'   demoNEON()
+#' } else {
+#'   message("NEON is not supported")
+#' }
+#' }
+#' 
+#' @export
+supportsNEON <- function() {
+  features <- getSimdFeatures()
+  !is.null(features$HW_NEON) && features$HW_NEON
+}
+
 #' Determine if CPU supports AVX SIMD instructions
 #' 
 #' @return Boolean
@@ -138,6 +172,15 @@ getAVXFlags <- function() {
 getAVX512Flags <- function() {
   avx512CodesWithFlags <- c( "HW_AVX512_F", "HW_AVX512_PF", "HW_AVX512_ER", "HW_AVX512_CD", "HW_AVX512_VL", "HW_AVX512_BW", "HW_AVX512_DQ")
   paste(getAVXFlags(), .makeFlags(getSimdFeatures(), avx512CodesWithFlags), collapse = " ")
+}
+
+#' Concatenate supported NEON compiler flags for system CPU
+#' 
+#' @return String for compiler flags
+#' 
+#' @export
+getNEONFlags <- function() {
+  NULL
 }
 
 .makeFlags <- function(features, codes) {
