@@ -1,9 +1,9 @@
-## Package patch following email from Brian Ripley noting compiler error on Solaris
-* Fixed.  Solaris C++ compiler defines type `char` == `int8_t` which led to recursively called constructors.  Such constructors are now #ifdef'd out for Solaris compilation
-* Checked on: Oracle Solaris 10, x86, 32 bit, R-patched (experimental)
+## Package patch following email from Brian Ripley noting compiler error on Apple M1 hardware.
+* Fixed.  Package now supports NEON (128bit wide) SIMD instructions provided via Xsimd
 
 ## Test environments
-* local OS X install, R 3.5.1
+* local OS X install (Intel), R 4.0.3
+* local Apple M1 (Big Sur), R 4.0.3
 * ubuntu 14.04 (on travis-ci), R 3.5.1, gcc 7.0
 * win-builder (devel, release, oldrel)
 * solaris 10, R-patched (experimental)
