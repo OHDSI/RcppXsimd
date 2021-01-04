@@ -1,5 +1,6 @@
 ## Package patch following email from Brian Ripley noting compiler error on Apple M1 hardware.
 * Fixed.  Package now supports NEON (128bit wide) SIMD instructions provided via Xsimd
+* Also modified testing on Windows x64
 
 ## Test environments
 * local OS X install (Intel), R 4.0.3

@@ -17,7 +17,7 @@ Authors@R: c(
 Description: This header-only library provides modern, portable C++ wrappers for SIMD
     intrinsics and parallelized, optimized math implementations (SSE, AVX, NEON, AVX512).
     By placing this library in this package, we offer an efficient distribution system for
-    Xsimd <https://github.com/QuantStack/xsimd> for R packages using CRAN.
+    Xsimd <https://github.com/xtensor-stack/xsimd> for R packages using CRAN.
 License: BSD_3_clause + file LICENSE
 Imports: Rcpp (>= 1.0.0)
 LinkingTo: Rcpp

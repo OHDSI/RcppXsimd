@@ -3,7 +3,7 @@ library(RcppXsimd)
 context("test-SIMD.R")
 
 test_that("SSE", {
-  if (supportsSSE()) {
+  if (Sys.getenv("R_ARCH") != "/x64" && supportsSSE()) {
     Sys.setenv(PKG_CPPFLAGS = getSSEFlags())
     Rcpp::sourceCpp(verbose = TRUE, code='
       // [[Rcpp::plugins(cpp14)]]
@@ -26,7 +26,7 @@ test_that("SSE", {
 })
 
 test_that("AVX", {
-  if (supportsAVX()) {
+  if (Sys.getenv("R_ARCH") != "/x64" && supportsAVX()) {
     Sys.setenv(PKG_CPPFLAGS = getAVXFlags())
     Rcpp::sourceCpp(verbose = TRUE, code='
     // [[Rcpp::plugins(cpp14)]]
@@ -48,7 +48,7 @@ test_that("AVX", {
 })
 
 test_that("AVX512", {
-  if (supportsAVX512()) {
+  if (Sys.getenv("R_ARCH") != "/x64" && supportsAVX512()) {
     Sys.setenv(PKG_CPPFLAGS = getAVX512Flags())
     Rcpp::sourceCpp(verbose = TRUE, code='
     // [[Rcpp::plugins(cpp14)]]
