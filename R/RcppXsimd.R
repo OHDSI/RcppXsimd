@@ -180,7 +180,7 @@ getAVX512Flags <- function() {
 #' 
 #' @export
 getNEONFlags <- function() {
-  NULL
+  ""
 }
 
 .makeFlags <- function(features, codes) {
