@@ -2,7 +2,7 @@
 
 VERSION=7.1.3
 FILE=${VERSION}.tar.gz
-URL=https://github.com/QuantStack/xsimd/archive/${FILE}
+URL=https://github.com/xtensor-stack/xsimd/archive/${FILE}
 VALID="MD5 (${FILE}) = 1d831e7f6ca87aa75b09c6e88911c18f"
 
 if [ ! -f "${FILE}" ]; then

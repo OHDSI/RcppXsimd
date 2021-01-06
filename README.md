@@ -6,7 +6,7 @@ RcppXsimd
 Overview
 ============
 
-This library provides an `Rcpp` wrapper around [Xsimd](https://github.com/QuantStack/xsimd) that is a modern, portable `C++14` header-only library for SIMD intrinsics and parallelized, optimized math implementations.
+This library provides an `Rcpp` wrapper around [Xsimd](https://github.com/xtensor-stack/xsimd) that is a modern, portable `C++14` header-only library for SIMD intrinsics and parallelized, optimized math implementations.
 
 Example
 ========
