@@ -1,3 +1,6 @@
+## Fix and resubmit request from Uwe Ligges on 06-Jan-2021
+* Moved URL in README.md to new organization in GitHub as requested
+
 ## Package patch following email from Brian Ripley noting compiler error on Apple M1 hardware.
 * Fixed.  Package now supports NEON (128bit wide) SIMD instructions provided via Xsimd
 * Also modified testing on Windows x64
