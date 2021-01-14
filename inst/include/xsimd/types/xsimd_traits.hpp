@@ -10,6 +10,7 @@
 #define XSIMD_TRAITS_HPP
 
 #include <type_traits>
+#include <limits> // Patch for gcc-11
 
 #include "xsimd_types_include.hpp"
 
