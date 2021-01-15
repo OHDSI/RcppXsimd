@@ -1,9 +1,6 @@
-## Fix and resubmit request from Uwe Ligges on 06-Jan-2021
-* Moved URL in README.md to new organization in GitHub as requested
-
-## Package patch following email from Brian Ripley noting compiler error on Apple M1 hardware.
-* Fixed.  Package now supports NEON (128bit wide) SIMD instructions provided via Xsimd
-* Also modified testing on Windows x64
+## Package patch following email from Brian Ripley noting compiler error with `gcc 11`
+* Fixed compilations error under `gcc11` (missing #include <limits>)
+* Added `inst/CITATION` file
 
 ## Test environments
 * local OS X install (Intel), R 4.0.3
@@ -13,7 +10,11 @@
 * solaris 10, R-patched (experimental)
 
 ## R CMD check results
-* There were no ERRORs, WARNINGs or NOTEs.
+* There were no ERRORs, WARNINGs or NOTEs on most systems.
+* On windows, we see:
+		Compilation used the following non-portable flag(s):
+		'-mavx' '-mfma' '-msse4.2'
+  which is as expected.
 
 ## Downstream dependencies
 There are currently no downstream dependencies.

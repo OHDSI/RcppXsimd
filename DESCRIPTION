@@ -1,7 +1,7 @@
 Package: RcppXsimd
 Type: Package
 Title: Xsimd C++ Header-Only Library Files
-Version: 7.1.5
+Version: 7.1.6
 Date: 2021-01-05
 Authors@R: c(
     person("Marc A.", "Suchard", email = "msuchard@ucla.edu", role = c("aut","cre")),
