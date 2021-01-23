@@ -1,4 +1,4 @@
-# RcppXsimd 7.1.5
+# RcppXsimd 7.1.6
 
 - Fixed missing header <limits> in Xsimd version 7.1 for compilation under `gcc 11`
 - Added `inst/CITATION` file
