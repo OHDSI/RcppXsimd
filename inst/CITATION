@@ -1,12 +1,17 @@
 citHeader("To cite RcppXsimd in publications, please use:")
 
-citEntry(entry = "article",
-  author = "Andrew J. Holbrook and Philippe Lemey and Guy Baele and Simon Dellicour and Dirk Brockmann and Andrew Rambaut and Marc A. Suchard",
-  title = "Massive parallelization boosts big Bayesian multidimensional scaling",
-  journal = "Journal of Computational and Graphical Statistics",
-  year = "2020",
-  pages="1-14",
-  publisher="Taylor \\& Francis",
-  url = "https://doi.org/10.1080/10618600.2020.1754226",
-  textVersion = "Andrew J. Holbrook, Philippe Lemey, Guy Baele, Simon Dellicour, Dirk Brockmann, Andrew Rambaut & Marc A. Suchard (2020) Massive Parallelization Boosts Big Bayesian Multidimensional Scaling, Journal of Computational and Graphical Statistics, DOI: 10.1080/10618600.2020.1754226"
+bibentry(bibtype = "Article",
+         author = c(as.person("A. J. Holbrook"),
+                    as.person("P. Lemey"),
+                    as.person("G. Baele"),
+                    as.person("S. Dellicour"),
+                    as.person("D. Brockmann"),
+                    as.person("A. Rambaut"),
+                    as.person("M. A. Suchard")),
+        title = "Massive parallelization boosts big Bayesian multidimensional scaling",
+        journal = "Journal of Computational and Graphical Statistics",
+        year = "2021",
+        volume = "30",
+        pages="11-24",
+        doi = "10.1080/10618600.2020.1754226"
 )
