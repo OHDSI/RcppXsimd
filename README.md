@@ -1,7 +1,9 @@
 RcppXsimd
 =======
 
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/RcppXsimd)](https://CRAN.R-project.org/package=RcppXsimd)
+[![Build Status](https://github.com/ohdsi/RcppXsimd/actions/workflows/R_CMD_check_Hades.yaml/badge.svg)](https://github.com/OHDSI/RcppXsimd/actions?query=workflow%3AR-CMD-check)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/RcppXsimd)](https://CRAN.R-project.org/package=RcppXsimd)
+[![CRAN_Status_Badge](https://cranlogs.r-pkg.org/badges/RcppXsimd)](https://cran.r-project.org/package=RcppXsimd)
 
 Overview
 ============
@@ -39,9 +41,7 @@ if (supportsAVX()) {
 Development status
 ===========
 
-[![Build Status](https://travis-ci.org/OHDSI/RcppXsimd.svg?branch=master)](https://travis-ci.org/OHDSI/RcppXsimd)
-
-[![Build status](https://ci.appveyor.com/api/projects/status/h6ucnf08yk08fbkk?svg=true)](https://ci.appveyor.com/project/andrewjholbrook/rcppxsimd)
+RcppXsimd is being developed in R Studio.
 
 Acknowledgements
 ================

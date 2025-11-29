@@ -3,11 +3,10 @@
 #' The RcppXsimd package wrappers the header-only C++ Xsimd library that 
 #' provides parallelized math implementations using SIMD
 #' 
-#' @docType package
 #' @name RcppXsimd
 #' @useDynLib RcppXsimd, .registration = TRUE
 #' @importFrom Rcpp sourceCpp
-NULL
+"_PACKAGE"
 
 #' Determine if CPU supports SSE SIMD instructions
 #' 

@@ -1,6 +1,5 @@
-CXX_STD = CXX14
-
-PKG_CPPFLAGS = -I../inst/include -mfma -msse4.2 -mavx
+# Add `-mfma -msee4.2 -mavx` to force SIMD compliations on Windows
+PKG_CPPFLAGS = -I../inst/include # -mfma -msse4.2 -mavx
 
 OBJECTS = \
 	RcppXsimd.o \

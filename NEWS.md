@@ -1,3 +1,7 @@
+# RcppXsimd 7.1.6-1
+
+- Remove dependency on C++14
+
 # RcppXsimd 7.1.6
 
 - Fixed missing header <limits> in Xsimd version 7.1 for compilation under `gcc 11`
