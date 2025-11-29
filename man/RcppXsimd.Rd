@@ -2,9 +2,27 @@
 % Please edit documentation in R/RcppXsimd.R
 \docType{package}
 \name{RcppXsimd}
+\alias{RcppXsimd-package}
 \alias{RcppXsimd}
 \title{RcppXsimd: Rcpp wrapper to Xsimd}
 \description{
 The RcppXsimd package wrappers the header-only C++ Xsimd library that 
 provides parallelized math implementations using SIMD
+}
+\author{
+\strong{Maintainer}: Marc A. Suchard \email{msuchard@ucla.edu}
+
+Authors:
+\itemize{
+  \item Andrew J. Holbrook
+}
+
+Other contributors:
+\itemize{
+  \item Observational Health Data Sciences and Informatics [copyright holder]
+  \item Johan Mabille (author and copyright holder of Xsimd library under a BSD-3 license) [copyright holder, contributor]
+  \item Sylvain Corlay (author and copyright holder of Xsimd library under a BSD-3 license) [copyright holder, contributor]
+  \item Alexander J. Lee (author and copyright holder of FeatureDetector library under a CC0 1.0 license) [copyright holder, contributor]
+}
+
 }
