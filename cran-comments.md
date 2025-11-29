@@ -9,10 +9,6 @@
 
 ## R CMD check results
 * There were no ERRORs, WARNINGs or NOTEs on most systems.
-* On windows, we see:
-		Compilation used the following non-portable flag(s):
-		'-mavx' '-mfma' '-msse4.2'
-  which is as expected.
 
 ## Downstream dependencies
 There are currently no downstream dependencies.
